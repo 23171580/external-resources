@@ -9,7 +9,7 @@ function addGenerator (Blockly) {
 
         Blockly.Arduino.includes_.dht_init = `#include <DHT.h>`;
         Blockly.Arduino.definitions_[`dht_init_${no}`] = `DHT dht_${no}(${pin}, ${model});`;
-        return '';
+        return `dht_${no}.begin();\n`;
     };
 
     Blockly.Arduino.dht_readHumidity = function (block) {
